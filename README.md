@@ -5,7 +5,7 @@
 <h4>MVP</h4>
 <p>1. Only registered user will be able to use the traffic app.</p>
 <p>2. After registration and user logs into the app, user can scroll through images of traffic cameras in Singapore.</p>
-<p>3. User can scroll through traffic images available</p>
+<p>3. User can scroll through traffic images available.</p>
 <p>4. A map will be displayed on each location of the traffic image.</p>
 <p>5. Time taken of the image will be displayed as well as the location.</p>
 <p>6. Current time will be shown on the site.</p>
@@ -24,6 +24,8 @@
 <a href="https://maps.googleapis.com/maps/api/geocode">Google API - Google Map</a>
 
 <h4>WireFrame</h4>
+<a href="https://www.figma.com/file/UJ58dSSXAu2RaSyO7HH6Q2/Untitled?type=design&node-id=0%3A1&t=mRKJ42hkJl3kzTBl-1">Figma Wireframe</a>
+
 <h5>Website Desktop</h5>
 <p>Register/Login Page</p>
 <img src="/TrafficApp/assets/Traffic Web/RegisterLoginPageWeb.png" width="450px"/>
@@ -39,16 +41,16 @@
 
 <h5>Web Mobile</h5>
 <p>Register/Login Page</p>
-<img src="/TrafficApp/assets/Traffic Iphone/RegisterLoginPageIphone.png" width="200px" height="600"/>
+<img src="/TrafficApp/assets/Traffic Iphone/RegisterLoginPageIphone.png" width="200px" height="400"/>
 
 <p>Register Page</p>
-<img src="/TrafficApp/assets/Traffic Iphone/RegisterPageIphone.png" width="200px" height="600"/>
+<img src="/TrafficApp/assets/Traffic Iphone/RegisterPageIphone.png" width="200px" height="400"/>
 
 <p>Login Page</p>
-<img src="/TrafficApp/assets/Traffic Iphone/LoginPageIphone.png" width="200px" height="600"/>
+<img src="/TrafficApp/assets/Traffic Iphone/LoginPageIphone.png" width="200px" height="400"/>
 
 <p>Home Page</p>
-<img src="/TrafficApp/assets/Traffic Iphone/UserPageIphone.png" width="200px" height="600"/>
+<img src="/TrafficApp/assets/Traffic Iphone/UserPageIphone.png" width="200px" height="400"/>
 
 <h3>Things to improve if time permits</h3>
 <p>1. Show all location of in the Data.gov.sg in API on Maps</p>
