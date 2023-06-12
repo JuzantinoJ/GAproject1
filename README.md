@@ -21,7 +21,7 @@
 
 <h4>API</h4>
 <a href="https://data.gov.sg/dataset/traffic-images">Data.gov.sg Traffic Images API</a>
-<a href="https://maps.googleapis.com/maps/api/geocode">Google API - Google Map</a>
+<a href="https://developers.google.com/maps/">Google API - Google Map</a>
 
 <h4>WireFrame</h4>
 <a href="https://www.figma.com/file/UJ58dSSXAu2RaSyO7HH6Q2/Untitled?type=design&node-id=0%3A1&t=mRKJ42hkJl3kzTBl-1">Figma Wireframe</a>
