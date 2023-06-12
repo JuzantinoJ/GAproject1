@@ -1,0 +1,70 @@
+/* Main Section */
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #eee;
+}
+
+/* Header */
+.header {
+  height: 200px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.logo {
+  height: 200px; /* Adjust the height of the logo */
+  width: 200px;
+}
+
+.time-now {
+  color: black;
+}
+
+/* container2 */
+.container2 {
+  height: 700px;
+}
+
+/* Sidebar */
+.navbar-nav {
+  background-color: black;
+  background: linear-gradient(rgba(169, 166, 209, 0.548), rgba(0, 0, 0, 0.9)),
+    url(../img/logo/ecproad.jpg);
+}
+.nav-item {
+  margin: 5px;
+}
+
+.sidebar-link {
+  background-color: #f8f9fa;
+  padding: 15px;
+  width: 150px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.sidebar-link ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-link ul li a {
+  color: black;
+}
+.sidebar-link {
+  transition: all 0.4s;
+}
+
+.sidebar-link:hover {
+  background-color: #444;
+  border-radius: 5px;
+}
+
+/* Dashboard */
+.dashboard {
+  background: linear-gradient(rgba(169, 166, 209, 0.548), rgba(0, 0, 0, 0.9));
+  padding: 10px;
+  height: 500px;
+}

@@ -29,29 +29,29 @@
 
 <h5>Website Desktop</h5>
 <p>Register/Login Page</p>
-<img src="/TrafficApp/assets/Traffic Web/RegisterLoginPageWeb.png" width="450px"/>
+<img src="img/TrafficApp/assets/Traffic Web/RegisterLoginPageWeb.png" width="450px"/>
 
 <p>Register Page</p>
-<img src="/TrafficApp/assets/Traffic Web/RegisterPageWeb.png" width="450px"/>
+<img src="img/TrafficApp/assets/Traffic Web/RegisterPageWeb.png" width="450px"/>
 
 <p>Login Page</p>
-<img src="/TrafficApp/assets/Traffic Web/LoginPageWeb.png" width="450px"/>
+<img src="img/TrafficApp/assets/Traffic Web/LoginPageWeb.png" width="450px"/>
 
 <p>Home Page</p>
-<img src="/TrafficApp/assets/Traffic Web/UserPageWeb.png" width="450px"/>
+<img src="img/TrafficApp/assets/Traffic Web/UserPageWeb.png" width="450px"/>
 
 <h5>Web Mobile</h5>
 <p>Register/Login Page</p>
-<img src="/TrafficApp/assets/Traffic Iphone/RegisterLoginPageIphone.png" width="200px" height="400"/>
+<img src="img/TrafficApp/assets/Traffic Iphone/RegisterLoginPageIphone.png" width="200px" height="400"/>
 
 <p>Register Page</p>
-<img src="/TrafficApp/assets/Traffic Iphone/RegisterPageIphone.png" width="200px" height="400"/>
+<img src="img/TrafficApp/assets/Traffic Iphone/RegisterPageIphone.png" width="200px" height="400"/>
 
 <p>Login Page</p>
-<img src="/TrafficApp/assets/Traffic Iphone/LoginPageIphone.png" width="200px" height="400"/>
+<img src="img/TrafficApp/assets/Traffic Iphone/LoginPageIphone.png" width="200px" height="400"/>
 
 <p>Home Page</p>
-<img src="/TrafficApp/assets/Traffic Iphone/UserPageIphone.png" width="200px" height="400"/>
+<img src="img/TrafficApp/assets/Traffic Iphone/UserPageIphone.png" width="200px" height="400"/>
 
 <h3>Things to improve if time permits</h3>
 <p>1. Show all location of in the Data.gov.sg in API on Maps</p>
