@@ -12,4 +12,4 @@
 <p>Javascript</p>
 
 <h4>WireFrame</h4>
-<img src="/GAproject1/TrafficApp/assets/Traffic Web/Register:Login Page - Web.png">
+<img src="/TrafficApp/assets/Traffic Web/RegisterLoginPageWeb.png"/>
