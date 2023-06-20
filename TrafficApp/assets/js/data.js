@@ -1,5 +1,5 @@
 const baseUrl = "https://api.data.gov.sg/v1/transport/traffic-images/";
-const apiKey = "AIzaSyDQIbcjA68smmxedDNZupW3_4US9kHBZlA";
+const apiKey = "";
 
 const getLatLon = () => {
   fetch(baseUrl)
