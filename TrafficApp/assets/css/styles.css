@@ -7,6 +7,15 @@
   font-family: "Poppins", Arial, Helvetica, Lucida, sans-serif;
 }
 
+#logo {
+  width: 200px; /* Default width */
+  height: auto; /* Maintain aspect ratio */
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
 .container {
   height: 100vh;
   width: 100%;
@@ -29,6 +38,7 @@
 
 /* style to show signUp and login form */
 .form.signup {
+  margin-top: 15px;
   opacity: 0;
   pointer-events: none;
 }
@@ -91,6 +101,11 @@ form {
   padding: 5px;
 }
 
+#passwordError {
+  font-size: medium;
+  font-style: italic;
+  padding-left: 5px;
+}
 .field button {
   color: #fff;
   background-color: #091c4f;
@@ -172,18 +187,86 @@ a.google .google-icon {
   transform: translateY(-50%);
 }
 
-/* #map {
-  height: 400px;
-  width: 100%;
+/* Display Dashboard */
+.nav-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-#img {
-  width: 800px;
-  height: 600px;
-} */
+#userNameDisplay {
+  margin-right: auto;
+}
 
-@media screen and (max-width: 400px) {
+#signOutButton {
+  /* margin-left: 10px; Adjust the spacing as needed */
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+#signOutButton {
+  cursor: pointer;
+}
+#signOutButton:hover {
+  margin-left: 10px; /* Adjust the spacing as needed */
+  color: #d4d4d4;
+}
+
+.nav-line {
+  position: relative;
+  height: 1px;
+  width: auto;
+  margin: 10px 0;
+  background-color: #d4d4d4;
+}
+#img {
+  top: 20px;
+  width: 100%;
+  height: 400px;
+}
+#map {
+  height: 400px;
+  width: 100%;
+  top: 20px;
+}
+
+@media screen and (max-width: 414px) {
   .form {
     padding: 15px 10px;
+  }
+  #logo {
+    top: -10px;
+    width: 100px;
+  }
+  .form.signup {
+    margin-top: 100px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .dashboard {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-bar {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    text-align: center; /* Added this line */
+  }
+
+  #userNameDisplay {
+    margin-bottom: 10px;
+    white-space: nowrap; /* Added this line */
+    overflow: hidden; /* Added this line */
+    text-overflow: ellipsis; /* Added this line */
+  }
+
+  #signOutButton {
+    margin: 0;
+  }
+
+  .dashboard-info {
+    text-align: center;
   }
 }

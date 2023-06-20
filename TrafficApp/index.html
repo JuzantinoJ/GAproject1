@@ -8,7 +8,13 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/styles.css" />
     <!-- JS -->
-    <script src="assets/js/toggleSignUpLogin.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script type="module" src="assets/js/toggleSignUpLogin.js" defer></script>
+    <!-- <script src="assets/js/data.js" defer></script> -->
+    <script type="module" src="assets/js/auth.js" defer></script>
+    <script type="module" src="assets/js/firebase-config.js" defer></script>
+    <script src="assets/js/index.js" type="module" defer></script>
     <!-- BoxIcons Css -->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -17,18 +23,29 @@
     <title>Traffic App - Onboard</title>
   </head>
   <body>
+    <img src="assets/img/logo/tapplogo copy.png" alt="logo" id="logo" />
     <section class="container forms">
-      <div class="form login">
+      <div class="form login" id="loginForm">
         <div class="form-content">
           <header>Login</header>
 
           <form action="#">
             <div class="field input-field">
-              <input type="email" placeholder="Email" class="input" />
+              <input
+                type="email"
+                placeholder="Email"
+                class="input"
+                id="logUserEmail"
+              />
             </div>
 
             <div class="field input-field">
-              <input type="password" placeholder="Password" class="password" />
+              <input
+                type="password"
+                placeholder="Password"
+                class="password"
+                id="logUserPassword"
+              />
               <i class="bx bx-hide eye-icon"></i>
             </div>
 
@@ -37,7 +54,7 @@
             </div>
 
             <div class="field button-field">
-              <button>Login</button>
+              <button id="signInButton">Login</button>
             </div>
           </form>
           <div class="form-link">
@@ -60,34 +77,55 @@
 
       <!-- SignUp Form -->
 
-      <div class="form signup">
+      <div class="form signup" id="signupForm">
         <div class="form-content">
           <header>Signup</header>
 
           <form action="#">
             <div class="field input-field">
-              <input type="name" placeholder="Name" class="input" />
+              <input
+                type="name"
+                placeholder="Name"
+                class="input"
+                id="signUserName"
+              />
             </div>
 
             <div class="field input-field">
-              <input type="email" placeholder="Email" class="input" />
+              <input
+                type="email"
+                placeholder="Email"
+                class="input"
+                id="signUserEmail"
+              />
             </div>
 
             <div class="field input-field">
-              <input type="password" placeholder="Password" class="password" />
+              <input
+                type="password"
+                placeholder="Password"
+                class="password"
+                id="signUserPassword"
+              />
             </div>
 
             <div class="field input-field">
-              <input type="password" placeholder="Password" class="password" />
+              <input
+                type="password"
+                placeholder="Password"
+                class="password"
+                id="signUserPasswordCheck"
+              />
+
               <i class="bx bx-hide eye-icon"></i>
             </div>
-
+            <p id="passwordError"></p>
             <div class="form-link">
               <a href="#" class="forgot-pass">Forgot Password?</a>
             </div>
 
             <div class="field button-field">
-              <button>Signup</button>
+              <button id="signUpButton">Signup</button>
             </div>
           </form>
           <div class="form-link">

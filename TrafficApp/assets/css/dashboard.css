@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  font-family: "Poppins", Arial, Helvetica, Lucida, sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: 60px 1fr;
+  grid-template-areas:
+    "side header"
+    "side main";
+}
+
+.header {
+  background-color: #fff;
+  grid-area: header;
+}
+
+.sidebar {
+  background: linear-gradient(to bottom, white 1%, #019193 30%);
+  padding: 25px;
+  grid-area: side;
+}
+
+.main {
+  background-color: #c3c5ca;
+  padding: 25px;
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "c1 c2 c3"
+    "c4 c4 c4"
+    "c5 c5 c5";
+
+  gap: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.card:nth-child(1) {
+  grid-area: c1;
+  height: 80px;
+}
+
+.card:nth-child(2) {
+  grid-area: c2;
+  height: 80px;
+}
+.card:nth-child(3) {
+  grid-area: c3;
+  height: 80px;
+}
+.card:nth-child(4) {
+  grid-area: c4;
+}
+
+.card:nth-child(5) {
+  grid-area: c5;
+}
+
+.card:nth-child(6) {
+  grid-area: c6;
+}
+
+#userNameDisplay {
+  margin-right: auto;
+}
+
+#logo {
+  width: 100px;
+  text-align: center;
+}
+#signOutButton {
+  cursor: pointer;
+  color: #091c4f;
+  border: 1px solid black;
+  border-radius: 20px;
+  text-align: center;
+  background-color: #019193;
+}
+#signOutButton:hover {
+  margin-left: 5px;
+  color: #fff;
+}
+#img {
+  top: 20px;
+  width: 100%;
+  height: 400px;
+}
+#map {
+  height: 400px;
+  width: 100%;
+  top: 20px;
+}
+@media (max-width: 925px) {
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 200px);
+    grid-template-areas: initial;
+  }
+  .card {
+    grid-area: initial !important;
+  }
+}
