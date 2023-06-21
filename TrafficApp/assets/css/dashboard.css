@@ -2,94 +2,166 @@
 
 * {
   font-family: "Poppins", Arial, Helvetica, Lucida, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  grid-template-rows: 60px 1fr;
-  grid-template-areas:
-    "side header"
-    "side main";
+  min-height: 100vh;
 }
 
-.header {
-  background-color: #fff;
-  grid-area: header;
+a {
+  text-decoration: none;
 }
 
-.sidebar {
-  background: linear-gradient(to bottom, white 1%, #019193 30%);
-  padding: 25px;
-  grid-area: side;
+li {
+  list-style: none;
 }
 
-.main {
-  background-color: #c3c5ca;
-  padding: 25px;
-  grid-area: main;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas:
-    "c1 c2 c3"
-    "c4 c4 c4"
-    "c5 c5 c5";
-
-  gap: 20px;
+h1,
+h2 {
+  color: #444;
 }
 
-.card {
-  background-color: #fff;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.card:nth-child(1) {
-  grid-area: c1;
-  height: 80px;
-}
-
-.card:nth-child(2) {
-  grid-area: c2;
-  height: 80px;
-}
-.card:nth-child(3) {
-  grid-area: c3;
-  height: 80px;
-}
-.card:nth-child(4) {
-  grid-area: c4;
-}
-
-.card:nth-child(5) {
-  grid-area: c5;
-}
-
-.card:nth-child(6) {
-  grid-area: c6;
-}
-
-#userNameDisplay {
-  margin-right: auto;
-}
-
-#logo {
-  width: 100px;
-  text-align: center;
-}
-#signOutButton {
-  cursor: pointer;
-  color: #091c4f;
-  border: 1px solid black;
-  border-radius: 20px;
-  text-align: center;
+.btn {
   background-color: #019193;
+  color: #f1f1f1;
+  padding: 5px 10px;
+  text-align: center;
 }
-#signOutButton:hover {
-  margin-left: 5px;
-  color: #fff;
+
+.btn:hover {
+  color: #444;
+  background-color: #f1f1f1;
+  padding: 3px 8px;
+}
+
+/* side bar */
+.side-menu {
+  position: fixed;
+  background: linear-gradient(to top, white 10%, #019193 30%);
+  width: 20vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-name img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.side-menu li {
+  font-size: 22px;
+  padding: 10px 40px;
+  color: white;
+  align-items: center;
+}
+
+.side-menu #userNameDisplay {
+  text-align: center;
+}
+.side-menu li:hover {
+  background-color: white;
+  color: #091c4f;
+  border-radius: 25px;
+}
+
+i {
+  padding: 5px;
+}
+
+/* container */
+.container {
+  position: absolute;
+  right: 0;
+  width: 80vw;
+  height: 100vh;
+  background: #f1f1f1;
+}
+
+.container .header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80vw;
+  height: 10vh;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.4);
+}
+
+.container .header .nav {
+  width: 90%;
+  display: flex;
+  align-items: center;
+}
+
+.container .header .nav .search {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+}
+
+.container .header .nav .search input[type="text"] {
+  border: none;
+  background: #f1f1f1;
+  padding: 10px;
+  width: 50%;
+}
+
+.container .header .nav .search button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .header .nav .search button i {
+  width: 30px;
+}
+.container .header .nav .user {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .header .nav .user .container .header .nav .user .user-profile {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.container .header .nav .user .user-profile #user {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container .content {
+  position: static;
+  margin-top: 10vh;
+  min-height: 90vh;
+  padding: 10px;
+}
+
+.container .content .show-img {
+  position: relative;
+  margin-top: 10px;
 }
 #img {
   top: 20px;
@@ -101,13 +173,30 @@ body {
   width: 100%;
   top: 20px;
 }
-@media (max-width: 925px) {
-  .main {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 200px);
-    grid-template-areas: initial;
+
+@media screen and (max-width: 1050px) {
+  .side-menu li {
+    font-size: 16px;
   }
-  .card {
-    grid-area: initial !important;
+}
+@media screen and (max-width: 940px) {
+  .side-menu li span {
+    display: none;
+  }
+  .side-menu {
+    align-items: center;
+  }
+
+  .side-menu li .bx {
+    width: 40px;
+    height: 40px;
+  }
+  #userNameDisplay {
+    font-size: 10px;
+  }
+
+  .brand-name img {
+    max-width: 50%;
+    max-height: 50%;
   }
 }
