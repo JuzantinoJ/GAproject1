@@ -12,7 +12,7 @@ const createData = async () => {
       }
     })
     .then(async (data) => {
-      const cameraPromises = data.items[0].cameras.map((element) => {
+      const cameraPromises = data.items[0].cameras.map(async (element) => {
         const testLat = element.location.latitude;
         const testLon = element.location.longitude;
         const image = element.image;
@@ -149,7 +149,7 @@ const displayNewData = (newData) => {
 
       const timeStampElement = document.getElementById("timeStamp");
       timeStampElement.textContent =
-        "Timestamp: " + formatDateTime(selectedData.timestamp);
+        "Image taken at: " + formatDateTime(selectedData.timestamp);
 
       const image = document.querySelector("#image");
       const img = document.createElement("img");
