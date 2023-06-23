@@ -1,5 +1,5 @@
 const baseUrl = "https://api.data.gov.sg/v1/transport/traffic-images/";
-const apiKey = "";
+const apiKey = "AIzaSyDQIbcjA68smmxedDNZupW3_4US9kHBZlA";
 
 // function to use data from data.gov.sg and google reverse geocode and create a new data
 const createData = async () => {
