@@ -1,8 +1,11 @@
+import googleapiKey from "./apiKeys.js";
+
 const baseUrl = "https://api.data.gov.sg/v1/transport/traffic-images/";
-const apiKey = "AIzaSyDQIbcjA68smmxedDNZupW3_4US9kHBZlA";
+const apiKey = googleapiKey;
 
 // function to use data from data.gov.sg and google reverse geocode and create a new data
 const createData = async () => {
+  // retrieves data from the API
   return fetch(baseUrl)
     .then((res) => {
       if (res.ok) {
@@ -12,7 +15,11 @@ const createData = async () => {
       }
     })
     .then(async (data) => {
+      // DATA.GOV.SG API
+      console.log(data.items[0].cameras);
+      //accesses the items array in the data object and maps over the cameras array within each item.
       const cameraPromises = data.items[0].cameras.map(async (element) => {
+        //  extract from each element
         const testLat = element.location.latitude;
         const testLon = element.location.longitude;
         const image = element.image;
@@ -23,6 +30,7 @@ const createData = async () => {
         // wait for all the promises to resolve before returning the newData array
         return getLocationName(testLat, testLon)
           .then((locationName) => {
+            // constructs a new object
             return {
               locationName: locationName,
               location: { latitude: testLat, longitude: testLon },
@@ -36,9 +44,11 @@ const createData = async () => {
             return null;
           });
       });
-
+      //wait for all the promises in the array to resolve
       return Promise.all(cameraPromises).then((newData) => {
+        //resulting array is assigned to newData
         console.log(newData);
+        //remove any null values
         return newData.filter((item) => item !== null);
       });
     })
@@ -55,6 +65,8 @@ const getLocationName = async (latitude, longitude) => {
     const response = await fetch(url);
     const data = await response.json();
     const locationResult = data.results[0];
+    // Google Map API
+    console.log(locationResult);
     if (locationResult) {
       const locationName = locationResult.formatted_address;
       return locationName;
@@ -122,7 +134,7 @@ function formatDateTime(dateTimeString) {
   return formattedDateTime;
 }
 
-const displayNewData = (newData) => {
+const displayNewData = async (newData) => {
   const dropdown = document.createElement("select");
   const defaultOption = document.createElement("option");
   defaultOption.text = "Select a location";
@@ -164,19 +176,22 @@ const displayNewData = (newData) => {
       selectedData.location.latitude,
       selectedData.location.longitude
     );
-    const map = document.querySelector("#map");
-    map.innerHTML = "";
   });
 
   const dropdownContainer = document.getElementById("locationDropdown");
   dropdownContainer.appendChild(dropdown);
+  const map = document.querySelector("#map");
+  map.innerHTML = "";
 };
-document.addEventListener("DOMContentLoaded", () => {
-  createData()
-    .then((data) => {
-      displayNewData(data);
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    //returns a promise that resolves to the data retrieved and processed from an API
+    //handle the resolved value of the createData promise
+    const newData = await createData();
+    // render and display the retrieved and processed data in the UI
+    await displayNewData(newData);
+  } catch (error) {
+    console.error("Error:", error);
+  }
 });
